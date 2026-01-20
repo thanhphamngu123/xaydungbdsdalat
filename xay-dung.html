@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Lâm Construction | Nhà thầu xây dựng chuyên nghiệp</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <link rel="stylesheet" href="du-an.css">
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="xaydung.css">
+    <link rel="stylesheet" href="lienhe.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="lienhe.js" defer></script>
+
+</head>
+
+<body class="vd-style-page">
+    <!-- Modal/Popup Liên hệ -->
+    <div class="vd-contact-modal" id="contactModal">
+        <div class="vd-modal-overlay"></div>
+        <div class="vd-modal-content">
+            <button class="vd-modal-close" aria-label="Đóng">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3>Chọn cách liên hệ</h3>
+            <p>Vui lòng chọn phương thức liên hệ phù hợp với bạn</p>
+
+            <!-- Thay thế phần vd-contact-options trong modal -->
+            <div class="vd-contact-options">
+                <!-- Email Option - CHANGED TO BUTTON -->
+                <button class="vd-contact-option vd-option-email" id="copyEmailBtn">
+                    <div class="vd-option-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </div>
+                    <div class="vd-option-content">
+                        <h4>Sao chép Email</h4>
+                        <p>anlamdalat@gmail.com</p>
+                        <span class="vd-option-desc">Sao chép để gửi email</span>
+                    </div>
+                    <i class="fa-solid fa-copy"></i>
+                </button>
+
+                <!-- Zalo Option - KEEP AS LINK -->
+                <a href="https://zalo.me/0886999291" target="_blank" class="vd-contact-option vd-option-zalo"
+                    onclick="closeModal()">
+                    <div class="vd-option-icon">
+                        <i class="fa-solid fa-comment-dots"></i>
+                    </div>
+                    <div class="vd-option-content">
+                        <h4>Nhắn Zalo</h4>
+                        <p>0886 999 291</p>
+                        <span class="vd-option-desc">Phản hồi ngay lập tức</span>
+                    </div>
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                </a>
+            </div>
+
+            <div class="vd-modal-footer">
+                <p>Hoặc gọi trực tiếp: <strong>0886 999 291</strong></p>
+            </div>
+        </div>
+    </div>
+    <div class="website-container">
+        <header class="vd-header">
+            <div class="vd-nav-logo">
+                <a href="../index.html"><img src="../images/editlogo1.png" alt="An Lâm" class="logo-img"></a>
+            </div>
+            <nav class="vd-floating-nav">
+                <div class="vd-nav-menu">
+                    <a href="https://anlamdalat.vn/"> Trang Chủ</a>
+                    <a href="https://anlamdalat.vn/page/xay-dung" class="active">Xây Dựng</a>
+                    <a href="https://anlamdalat.vn/page/dich-vu">Dịch Vụ</a>
+                    <a href="https://anlamdalat.vn/page/du-an">Dự Án</a>
+
+                </div>
+                <button class="vd-hamburger" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </header>
+        <!-- Hero Section - Full Screen -->
+        <section class="vd-hero">
+            <video autoplay muted loop playsinline class="vd-hero-video">
+                <source src="../uploads/xay-dung/videos/videotest2.webm" type="video/webm">
+            </video>
+
+            <div class="vd-hero-bottom">
+                <div class="vd-hero-left">
+                    <h1 class="vd-hero-title">Nhà thầu<br>xây dựng</h1>
+                    <p class="vd-hero-since">Từ năm 2023</p>
+                </div>
+                <div class="vd-hero-right">
+                    <a href="https://anlamdalat.vn/page/du-an" class="vd-hero-project-card">
+                        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2070&auto=format&fit=crop"
+                            alt="Featured Project">
+                    </a>
+                    <a href="https://anlamdalat.vn/page/du-an" class="vd-hero-link-group">
+                        <span>Dự án của chúng tôi</span>
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prestige Section -->
+        <section class="vd-prestige-section">
+            <div class="vd-container">
+                <div class="vd-prestige-header">
+                    <h2>Hơn 250<br>dự án hoàn thành</h2>
+                    <p>Thiết kế và xây dựng các công trình đòi hỏi chuyên môn cụ thể. Đội ngũ của chúng tôi nắm vững các
+                        tiêu chuẩn và yêu cầu kỹ thuật riêng của từng loại hình.</p>
+
+                </div>
+
+                <div class="vd-prestige-gallery" id="prestige-gallery">
+                    <!-- Dự án sẽ được load động từ projects.json -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section (Overlapping) -->
+        <section class="vd-about-overlap-section" id="about">
+            <div class="vd-about-top-image">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop"
+                    alt="Office Interior">
+            </div>
+            <div class="vd-container">
+                <div class="vd-about-content-wrapper">
+                    <div class="vd-about-vertical-image">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1000&auto=format&fit=crop"
+                            alt="Construction Team">
+                    </div>
+                    <div class="vd-about-text">
+                        <h2>Đơn vị hàng đầu trong<br>xây dựng công trình</h2>
+                        <p>Ngành xây dựng đòi hỏi hình ảnh thương hiệu hoàn hảo. Đó là lý do tại sao chúng tôi quản lý
+                            tỉ mỉ từng giai đoạn phê duyệt với các đối tác và cơ quan chức năng. Phương pháp tiếp cận
+                            đồng bộ của chúng tôi tối ưu hóa hiệu quả và lợi nhuận cho các dự án xây dựng mới, mở rộng
+                            hoặc cải tạo của bạn.</p>
+                        <p>Làm việc hàng ngày với những tên tuổi lớn nhất trong ngành, chúng tôi đã có được chuyên môn
+                            sâu rộng về tiêu chuẩn xây dựng và xuất sắc trong việc tuân thủ các yêu cầu kỹ thuật, đồng
+                            thời tính đến nhu cầu của bạn.</p>
+                        <a href="https://anlamdalat.vn/page/gioi-thieu" class="vd-prestige-btn-link">
+                            Về chúng tôi <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="vd-contact-section" id="contact">
+            <div class="vd-container">
+                <div class="vd-contact-grid">
+                    <div class="vd-contact-content">
+                        <h2>Cùng nhau, biến<br>dự án của bạn thành hiện thực</h2>
+                        <p>Chúng tôi luôn sẵn sàng lắng nghe ý tưởng của bạn. Hãy liên hệ với chúng tôi để bắt đầu hành
+                            trình xây dựng không gian mơ ước.</p>
+                        <a href="#" class="vd-prestige-btn">
+                            Liên hệ với chúng tôi <i class="fa-solid fa-arrow-right-long"></i>
+                        </a>
+                    </div>
+                    <div class="vd-contact-images">
+                        <div class="vd-contact-img-1">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop"
+                                alt="Meeting">
+                        </div>
+                        <div class="vd-contact-img-2">
+                            <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1931&auto=format&fit=crop"
+                                alt="Architecture">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="main-footer">
+            <div class="container-footer ">
+                <div class="footer-grid">
+                    <div class="footer-col">
+                        <h4>Về An Lâm </h4>
+                        <p>Nền tảng công nghệ bất động sản, giúp việc mua bán và cho thuê trở nên dễ dàng, minh bạch
+                            hơn.
+                        </p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-youtube"></i></a>
+                            <a href="#"><i class="fab fa-tiktok"></i></a>
+                        </div>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Dịch Vụ</h4>
+                        <ul>
+                            <li><a href="#">Môi Giới Mua Bán Bất Động Sản</a></li>
+                            <li><a href="#">Môi Giới Cho Thuê Bất Động Sản</a></li>
+                            <li><a href="#">Xây Dựng Công Trình Dân Dụng</a></li>
+                            <li><a href="#">Tư Vấn Pháp Lý</a></li>
+                            <li><a href="#">Tư Vấn Đầu Tư</a></li>
+                        </ul>
+                    </div>
+                    <!--  <div class="footer-col">
+                    <h4>Liên Kết Nhanh</h4>
+                    <ul>
+                        <li><a href="#">Điều Khoản Dịch Vụ</a></li>
+                        <li><a href="#">Chính Sách Bảo Mật</a></li>
+                        <li><a href="#">Câu Hỏi Thường Gặp</a></li>
+                    </ul>
+                </div> -->
+                    <div class="footer-col">
+                        <h4>Thông Tin Liên Hệ</h4>
+                        <p><i class="fas fa-map-marker-alt"></i> 144 Vạn Hạnh, Phường Lâm Viên - Đà Lạt</p>
+                        <p><i class="fas fa-phone"></i> 0886 999 291</p>
+                        <p><i class="fas fa-envelope"></i> anlamdalat@gmail.com</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>Làm việc từ tâm - nâng tầm giá trị</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- === SOCIAL CONTACT CARD (FLOATING) - MINIMALIST HTML === -->
+    <div class="card-container">
+        <div class="card">
+            <ul>
+                <!-- 1. Nút Điện Thoại -->
+                <li>
+                    <a href="tel:0985820843" title="Gọi ngay"> <!-- Thêm title để người dùng biết chức năng -->
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </li>
+
+                <!-- 2. Nút Zalo -->
+                <li>
+                    <a href="https://zalo.me/0987654321" target="_blank" title="Nhắn tin Zalo">
+                        <i class="fas fa-comment-dots"></i> <!-- Icon bình luận -->
+                    </a>
+                </li>
+
+                <!-- 3. Nút Facebook -->
+                <li>
+                    <a href="https://www.facebook.com/DTPGunMew/?locale=vi_VN" target="_blank"
+                        title="Ghé thăm Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <button class="button" id="back-to-top-btn">
+        <svg class="svgIcon" viewBox="0 0 384 512">
+            <path
+                d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z">
+            </path>
+        </svg>
+    </button>
+
+
+    <script src="../d.js" defer></script>
+    <script>
+        // Testimonial carousel
+        const testimonials = document.querySelectorAll('.vd-testimonial');
+        const dots = document.querySelectorAll('.vd-dot');
+        let currentIndex = 0;
+
+        function showTestimonial(index) {
+            testimonials.forEach(t => t.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+
+            testimonials[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                currentIndex = parseInt(dot.dataset.index);
+                showTestimonial(currentIndex);
+            });
+        });
+
+        // Auto rotate every 5 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % testimonials.length;
+            showTestimonial(currentIndex);
+        }, 5000);
+    </script>
+
+    <script>
+        // Hamburger Menu Toggle
+        const hamburger = document.querySelector('.vd-hamburger');
+        const navMenu = document.querySelector('.vd-nav-menu');
+
+        if (hamburger && navMenu) {
+            hamburger.addEventListener('click', function () {
+                this.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('.vd-nav-menu a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
+
+        // Contact Modal Functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Elements
+            const contactModal = document.getElementById('contactModal');
+            const contactButtons = document.querySelectorAll('a[href="#contact"], .vd-prestige-btn[href="#"]');
+            const closeModalBtn = document.querySelector('.vd-modal-close');
+            const modalOverlay = document.querySelector('.vd-modal-overlay');
+
+            // Function to open modal
+            function openContactModal() {
+                contactModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+
+            // Function to close modal
+            function closeContactModal() {
+                contactModal.classList.remove('active');
+                document.body.style.overflow = ''; // Restore scrolling
+            }
+
+            // Add click event to all contact buttons
+            contactButtons.forEach(button => {
+                button.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    openContactModal();
+                });
+            });
+
+            // Close modal events
+            if (closeModalBtn) {
+                closeModalBtn.addEventListener('click', closeContactModal);
+            }
+
+            if (modalOverlay) {
+                modalOverlay.addEventListener('click', closeContactModal);
+            }
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && contactModal.classList.contains('active')) {
+                    closeContactModal();
+                }
+            });
+
+            // Prevent closing when clicking inside modal content
+            document.querySelector('.vd-modal-content').addEventListener('click', function (e) {
+                e.stopPropagation();
+            });
+        });
+
+        // Load dự án ngẫu nhiên cho prestige gallery
+        (async function () {
+            try {
+                const response = await fetch('projects.json');
+                const projects = await response.json();
+
+                // Xáo trộn và lấy 3 dự án ngẫu nhiên
+                const shuffled = projects.sort(() => Math.random() - 0.5);
+                const randomProjects = shuffled.slice(0, 3);
+
+                const gallery = document.getElementById('prestige-gallery');
+                if (!gallery) return;
+
+                gallery.innerHTML = randomProjects.map(project => `
+                    <div class="vd-prestige-item">
+                        <a href="chi-tiet-du-an.html?id=${project.id}">
+                            <div class="vd-prestige-img-wrapper">
+                                <img src="${project.mainImage}" alt="${project.title}">
+                            </div>
+                            <div class="vd-item-info">
+                                <h3>${project.title} <i class="fa-solid fa-arrow-right-long"></i></h3>
+                            </div>
+                        </a>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading projects:', error);
+            }
+        })();
+    </script>
+</body>
+
+</html>

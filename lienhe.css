@@ -1,0 +1,334 @@
+/* Copy Email Feedback */
+.vd-copy-feedback {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: #00b713;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 183, 19, 0.3);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    animation: slideInRight 0.3s ease, fadeOut 0.3s ease 2s forwards;
+    font-weight: 500;
+}
+
+.vd-copy-feedback i {
+    font-size: 1.2rem;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+/* ĐỒNG BỘ HÓA STYLE CHO CẢ 2 OPTIONS */
+.vd-contact-option {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #000;
+    border: 2px solid #eee;
+    transition: all 0.3s ease;
+    position: relative;
+    width: 100%;
+    background: white;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Loại bỏ style mặc định của button */
+.vd-contact-option.vd-option-email {
+    border: 2px solid #eee;
+    background: white;
+}
+
+/* Hover effect cho cả hai */
+.vd-contact-option:hover {
+    border-color: #00b713;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 183, 19, 0.1);
+}
+
+/* Riêng cho Email khi hover */
+.vd-option-email:hover {
+    background-color: rgba(0, 183, 19, 0.05);
+}
+
+/* Riêng cho Zalo khi hover */
+.vd-option-zalo:hover {
+    background-color: rgba(0, 106, 255, 0.05);
+    border-color: #006aff;
+}
+
+/* Style cho nút copy khi đã copy */
+.vd-option-email.copied {
+    background-color: rgba(0, 183, 19, 0.1);
+    border-color: #00b713;
+}
+
+.vd-option-email.copied .vd-option-icon {
+    background-color: #00b713;
+    color: white;
+}
+
+.vd-option-email.copied .vd-option-content h4,
+.vd-option-email.copied .vd-option-content p {
+    color: #00b713;
+}
+
+/* Icon container - ĐỒNG BỘ */
+.vd-option-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    font-size: 22px;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+}
+
+/* Email icon style */
+.vd-option-email .vd-option-icon {
+    background-color: rgba(234, 67, 53, 0.1);
+    color: #ea4335;
+}
+
+.vd-option-email:hover .vd-option-icon {
+    background-color: rgba(0, 183, 19, 0.1);
+    color: #00b713;
+}
+
+/* Zalo icon style */
+.vd-option-zalo .vd-option-icon {
+    background-color: rgba(0, 106, 255, 0.1);
+    color: #006aff;
+}
+
+/* Content area - ĐỒNG BỘ */
+.vd-option-content {
+    flex: 1;
+}
+
+.vd-option-content h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #000;
+    transition: color 0.3s ease;
+}
+
+.vd-option-content p {
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.vd-option-desc {
+    font-size: 0.85rem;
+    color: #666;
+    background-color: #f5f5f5;
+    padding: 3px 8px;
+    border-radius: 10px;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+/* Arrow/Copy icon - ĐỒNG BỘ */
+.vd-contact-option .fa-arrow-right-long,
+.vd-contact-option .fa-copy {
+    color: #999;
+    transition: all 0.3s ease;
+    font-size: 1.1rem;
+    margin-left: 10px;
+}
+
+/* Arrow cho Zalo khi hover */
+.vd-option-zalo:hover .fa-arrow-right-long {
+    transform: translateX(5px);
+    color: #006aff;
+}
+
+/* Copy icon cho Email khi hover */
+.vd-option-email:hover .fa-copy {
+    transform: scale(1.1);
+    color: #00b713;
+}
+
+/* Khi đã copy thành công */
+.vd-option-email.copied .fa-copy {
+    transform: scale(1.2);
+    color: #00b713;
+}
+
+/* Modal styles */
+.vd-contact-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.vd-contact-modal.active {
+    display: flex !important;
+    animation: fadeIn 0.3s ease;
+}
+
+.vd-modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+}
+
+.vd-modal-content {
+    position: relative;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    z-index: 10000;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.vd-modal-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: #000;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.vd-modal-content>p {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 1.05rem;
+}
+
+.vd-contact-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.vd-modal-footer {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.vd-modal-footer p {
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.vd-modal-footer strong {
+    color: #00b713;
+    font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .vd-modal-content {
+        padding: 30px 20px;
+        margin: 20px;
+    }
+
+    .vd-modal-content h3 {
+        font-size: 1.8rem;
+    }
+
+    .vd-contact-option {
+        padding: 15px;
+    }
+
+    .vd-option-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        margin-right: 12px;
+    }
+}
+
+/* Close button */
+.vd-modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: #666;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.vd-modal-close:hover {
+    color: #00b713;
+    background-color: rgba(0, 183, 19, 0.1);
+    transform: rotate(90deg);
+}

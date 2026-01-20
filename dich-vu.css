@@ -1,0 +1,476 @@
+/* === SERVICES PAGE (DỊCH VỤ) === */
+
+/* Services Page */
+.vd-services-page {
+    background-color: #fff;
+    min-height: 100vh;
+    color: #000;
+}
+
+.vd-services-hero {
+    height: 100vh;
+    min-height: 500px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+        url('https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2069&auto=format&fit=crop') center/cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    padding: 0 60px 80px;
+}
+
+.vd-services-hero-content {
+    max-width: 600px;
+    text-align: left;
+}
+
+.vd-services-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.vd-services-hero p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #e0e0e0;
+    max-width: 500px;
+}
+
+/* Reality Section (Parallax) */
+.vd-reality-section {
+    padding: 150px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    position: relative;
+    overflow: visible;
+    min-height: 1000px;
+}
+
+.vd-reality-content {
+    flex: 1;
+    max-width: 600px;
+    text-align: center;
+    margin: 0 50px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Căn giữa nội dung theo chiều dọc */
+}
+
+.vd-reality-step h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.vd-reality-step p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+.vd-step-line {
+    width: 3px;
+    height: 60px;
+    background: #00b713;
+    margin: 30px auto;
+}
+
+/* Ảnh bên trái - LUÔN Ở DƯỚI */
+.vd-reality-image-left {
+    width: 350px;
+    height: 450px;
+    /* ĐÃ BỎ COMMENT */
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    align-self: flex-end;
+    /* Đẩy xuống DƯỚI CÙNG */
+    margin-top: auto;
+    /* Quan trọng: đẩy xuống tối đa */
+    margin-bottom: 0;
+    /* Sát đáy */
+    /* Fix cho Safari/iOS */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Ảnh bên phải - LUÔN Ở TRÊN */
+.vd-reality-image-right {
+    width: 350px;
+    width: 350px;
+    height: 450px;
+    /* ĐÃ BỎ COMMENT */
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    align-self: flex-start;
+    /* Đẩy lên TRÊN CÙNG */
+    margin-bottom: auto;
+    /* Quan trọng: đẩy lên tối đa */
+    margin-top: 0;
+    /* Sát đỉnh */
+    /* Fix cho Safari/iOS */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+.vd-reality-image-left img,
+.vd-reality-image-right img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    /* Đảm bảo border-radius trên ảnh */
+    border-radius: 20px;
+    /* Fix cho Safari */
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Hiệu ứng để thấy rõ vị trí (tùy chọn) */
+.vd-reality-image-left::before {
+    content: "↓ Ảnh trái - DƯỚI CÙNG";
+    position: absolute;
+    top: -40px;
+    left: 0;
+    color: #00b713;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 3;
+}
+
+.vd-reality-image-right::before {
+    content: "↑ Ảnh phải - TRÊN CÙNG";
+    position: absolute;
+    bottom: -40px;
+    right: 0;
+    color: #00b713;
+    font-size: 14px;
+    font-weight: bold;
+    z-index: 3;
+    text-align: right;
+}
+
+/* Safari/iOS specific fixes */
+@supports (-webkit-touch-callout: none) {
+
+    .vd-reality-image-left,
+    .vd-reality-image-right {
+        -webkit-mask-image: -webkit-radial-gradient(white, black);
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+    }
+}
+
+
+
+
+
+/* === PROCESS SECTION === */
+.vd-process-section {
+    background-color: #ffffff;
+    color: #fff;
+    /* padding: 100px 20px;*/
+}
+
+.vd-process-header {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+}
+
+.vd-process-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #000000;
+}
+
+.vd-process-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.vd-process-card {
+    background-color: #f3f3f5;
+    border-radius: 20px;
+    padding: 60px;
+    border: 1px solid #fff;
+}
+
+.vd-card-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    margin-bottom: 60px;
+}
+
+.vd-step-number {
+    display: block;
+    font-size: 1.2rem;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+.vd-card-info h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 400;
+    color: #000000;
+}
+
+.vd-main-desc {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+}
+
+.vd-card-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 25px;
+}
+
+.vd-card-bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+
+}
+
+.vd-sub-step h4 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    color: #000000;
+    font-weight: 500;
+}
+
+.vd-sub-step p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* === SIGNED SECTION === */
+.vd-signed-section {
+    background-color: #ffffff;
+    padding: 100px 0 0;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.vd-signed-content {
+    margin-bottom: 60px;
+}
+
+.vd-signed-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: #666;
+    display: block;
+}
+
+.vd-signed-brand {
+    font-family: 'Inter', sans-serif;
+    font-size: 7rem;
+    font-weight: 400;
+    color: #000000;
+    letter-spacing: -1px;
+}
+
+.vd-signed-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 30px;
+    border: 3px solid #00b713;
+    border-radius: 50px;
+    color: #00b713;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.vd-signed-btn:hover {
+    background-color: #00b713;
+    color: #fff;
+}
+
+.vd-expanding-image-container {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    padding-bottom: 50px;
+}
+
+.vd-expanding-image-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vd-expanding-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 30px;
+    transition: transform 0.1s linear, border-radius 0.1s linear;
+    transform-origin: center center;
+}
+
+/* === RESPONSIVE ADJUSTMENTS === */
+
+@media (max-width: 1024px) {
+    .vd-reality-section {
+        flex-direction: column;
+        padding: 100px 20px;
+        gap: 60px;
+        overflow: hidden;
+        align-items: center;
+    }
+
+    .vd-reality-image-left,
+    .vd-reality-image-right {
+        width: 100%;
+        max-width: 500px;
+        height: 300px;
+        position: relative;
+        align-self: center;
+        margin: 0;
+
+        /* Cả 2 ảnh đều ở dưới content trên mobile */
+        /* Reset transform trên mobile */
+        transform: none !important;
+        -webkit-transform: none !important;
+
+    }
+
+    .vd-reality-image-left img,
+    .vd-reality-image-right img {
+        border-radius: 20px;
+        /* Đảm bảo trên mobile */
+    }
+
+    .vd-reality-content {
+        margin: 0;
+    }
+
+    .vd-signed-brand {
+        font-size: 5rem;
+    }
+
+    .vd-signed-label {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 1025px) {
+    .vd-reality-image-left {
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .vd-reality-image-right {
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+}
+
+@media (max-width: 768px) {
+
+    .vd-reality-image-left,
+    .vd-reality-image-right {
+        width: 100%;
+        height: 250px;
+    }
+
+    .vd-reality-section {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .vd-services-hero {
+        height: 60vh;
+        min-height: 400px;
+        padding: 0 20px 40px;
+    }
+
+    .vd-services-hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .vd-reality-section {
+        padding: 80px 20px;
+        min-height: auto;
+    }
+
+    .vd-reality-image-left,
+    .vd-reality-image-right {
+        width: 100%;
+        height: 300px;
+    }
+
+    .vd-signed-brand {
+        font-size: 3rem;
+        letter-spacing: -0.5px;
+    }
+
+    .vd-signed-label {
+        font-size: 1.5rem;
+    }
+
+    .vd-expanding-image-container {
+        height: 300px;
+    }
+
+    .vd-card-top,
+    .vd-card-bottom {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .vd-process-card {
+        padding: 30px;
+    }
+
+    .vd-process-header h2 {
+        font-size: 2rem;
+    }
+
+    .vd-card-info h3 {
+        font-size: 2rem;
+    }
+
+    .vd-card-image img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .vd-signed-brand {
+        font-size: 2.2rem;
+    }
+
+    .vd-signed-label {
+        font-size: 1.2rem;
+    }
+}
